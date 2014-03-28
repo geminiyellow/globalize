@@ -121,10 +121,10 @@ please just [let us know](https://github.com/jquery/globalize/issues).
 ### Hello World
 
 An example is worth a thousand words. Check out our Hello World demo by clicking
-one of its different flavors:
-- [Hello World using AMD and bower](doc/hello-world-amd-bower/).
-- [Hello World using Node.js and npm](doc/hello-world-node-npm/).
-- [Hello World in plain JavaScript](doc/hello-world/).
+in either one of its different flavors:
+- [Hello World (AMD + bower)](doc/hello-world-amd-bower/).
+- [Hello World (Node.js + npm)](doc/hello-world-node-npm/).
+- [Hello World (plain JavaScript)](doc/hello-world/).
 
 <a name="usage"></a>
 ### Usage
