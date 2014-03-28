@@ -92,14 +92,14 @@ easy to use. Read the section [How to get and load CLDR JSON data](#cldr_usage) 
 more information on its usage.
 
 <a name="modules"></a>
-#### Use the module you need
+#### Pick the module you need
 
 | File | Minified size | Summary |
 |---|--:|---|
 | globalize.js | 0.4KB | [Core library](#core) |
 | globalize/date.js | +9.2KB | [Date module](#date_module) provides date formatting and parsing |
-| globalize/number.js | +3.7KB | [Number module](#number_module) Provides number formatting and parsing |
-| globalize/translate.js | +0.7KB | [Translate module](#translate_module) Provides message translation |
+| globalize/number.js | +3.7KB | [Number module](#number_module) provides number formatting and parsing |
+| globalize/translate.js | +0.7KB | [Translate module](#translate_module) provides message translation |
 
 More modules to come...
 
