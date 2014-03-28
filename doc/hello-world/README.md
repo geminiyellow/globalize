@@ -42,10 +42,10 @@ distribution files yourself. See root's [README](../../README.md) for help.
 <script src="../../../dist/globalize.js"></script>
 ```
 
-Before using Globalize, we need to feed in I18n content (Unicode CLDR). In
-order to do so, we use `Globalize.load()` and pass the content as the first
-argument. In this demo, we use embedded static JSON. So, no extra step is
-required.
+Before using Globalize, we always need to feed it on the I18n content (Unicode
+CLDR) we are about to use. In order to do so, we use `Globalize.load()` and pass
+the content. On this demo, we tried to make the things a little easier for you.
+So, we are using embedded static JSON, and no extra step is required.
 
 ```javascript
 Globalize.load( ... );
