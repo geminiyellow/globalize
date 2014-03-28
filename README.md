@@ -10,6 +10,7 @@ Node.js module.
 - [Heads up!](#heads_up)
   - [This is an alpha version](#alpha)
 - [Getting started](#getting_started)
+  - [Hello World](#hello_world)
   - [Why globalization?](#why)
   - [About Globalize](#about)
     - [Where to use it?](#where)
@@ -52,6 +53,12 @@ problem, please create an issue first before trying to patch it.
 
 <a name="getting_started"></a>
 ## Getting Started
+
+<a name="hello_world"></a>
+### Hello World
+
+If you are a "skip the readings and jump into the demo" kinda person, check out
+our [hello world demo](doc/hello-world/).
 
 <a name="why"></a>
 ### Why globalization?
@@ -106,12 +113,6 @@ information on its usage.
 
 We officialy support http://jquery.com/browser-support/. If you find any bugs,
 please just [let us know](https://github.com/jquery/globalize/issues).
-
-<a name="hello_world"></a>
-### Hello World
-
-If you are a "skip the readings and jump into the demo" kinda person, check out
-our [hello world demo](doc/hello-world/).
 
 
 <a name="usage"></a>
