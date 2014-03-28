@@ -56,7 +56,7 @@ environment (yet).
 Patches to the previous 0.x codebase probably can't be used. If you have a
 problem, please create an issue first before trying to patch it.
 
-Are you looking for 0.x docs? This may help: https://github.com/jquery/globalize/tree/79ae658b842f75f58199d6e9074e01f7ce207468.
+Are you looking for 0.x docs? Click [here](https://github.com/jquery/globalize/tree/79ae658b842f75f58199d6e9074e01f7ce207468).
 
 
 <a name="about"></a>
