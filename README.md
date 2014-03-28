@@ -92,7 +92,7 @@ easy to use. Read the section [How to get and load CLDR JSON data](#cldr_usage) 
 more information on its usage.
 
 <a name="modules"></a>
-#### Pick the module you need
+#### Pick the modules you need
 
 | File | Minified size | Summary |
 |---|--:|---|
