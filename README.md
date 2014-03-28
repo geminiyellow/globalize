@@ -111,8 +111,8 @@ please just [let us know](https://github.com/jquery/globalize/issues).
 <a name="hello_world"></a>
 ### Hello World
 
-If you are a *skip the readings and jump into the demo* kinda person, check out
-our [hello world demo](doc/hello-world/).
+If an example talks more to you than words, then check out our [hello world
+demo](doc/hello-world/).
 
 <a name="usage"></a>
 ### Usage
