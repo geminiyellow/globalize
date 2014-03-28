@@ -101,8 +101,6 @@ more information on its usage.
 | globalize/number.js | +3.7KB | [Number module](#number_module) provides number formatting and parsing |
 | globalize/translate.js | +0.7KB | [Translate module](#translate_module) provides message translation |
 
-More to come...
-
 <a name="browser_support"></a>
 #### Browser Support
 
