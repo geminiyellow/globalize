@@ -1,46 +1,41 @@
 # Hello World
 
-
-## Script tag
-
 This is the simplest demo and it's composed of one single file:
 
 ```
-script-tag/
+./
 └── index.html
 ```
 
-### Running the demo
+## Running the demo
 
-1) Download `cldr.js`. See https://github.com/rxaviers/cldr for instructions.
-Then, copy its `dist/` files into `script-tag/`, so you'll get:
+1) Get Globalize's dependencies. If you download `cldr.js` and copy its `dist/` files into this directory (`hello-world/`), you'll get:
 
 ```
-script-tag/
+./
 ├── cldr
 │   └── supplemental.js
 ├── cldr.js
 └── index.html
 ```
 
-2) Point your browser to `./script-tag/index.html`.
+2) Point your browser to `./index.html`.
 
-### Understanding the demo
+## Understanding the demo
 
-First, the Globalize dependency `cldr.js` and its supplemental module are loaded.
+First, we load Globalize's dependencies (`cldr.js` and its supplemental module).
+Note you are supposed to manually download `cldr.js` yourself as an exercise of
+this demo.
 
 ```html
 <script src="cldr.js"></script>
 <script src="cldr/supplemental.js"></script>
 ```
 
-Note you need to manually download `cldr.js` yourself as an exercise of this
-demo as told above.
-
-Next, Globalize and its modules are loaded. Note they are already available on
+Next, we load Globalize and its modules. Note they are already available on
 this repository. If it's not, it means you're using a development branch (not a
-release branch). So, you need to either use a release branch or build the
-distribution files yourself. See root's [README](../../README.md) for help.
+release branch). So, you need to either use a release branch or [build the
+distribution files yourself](../../README.md).
 
 ```html
 <script src="../../../dist/globalize.js"></script>
@@ -48,85 +43,27 @@ distribution files yourself. See root's [README](../../README.md) for help.
 <script src="../../../dist/globalize/number.js"></script>
 ```
 
-Before using Globalize, we always need to feed it on the I18n content (Unicode
-CLDR) we are about to use. In order to do so, we use `Globalize.load()` and pass
-the content. On this demo, we tried to make things a little easier for you.
-So, we are using embedded static JSON, and we don't need to fetch this content
-elsewhere.
+At this point, we have Globalize loaded. But, before we can use it, we need to feed it on the appropriate I18n content (Unicode CLDR). In order to do so, we use
+`Globalize.load()` and pass the content. On this demo, we made the things a
+little easier for you: we've embedded static JSON into the demo. So, you don't
+need to actually fetch it elsewhere.
 
 ```javascript
 Globalize.load( ... );
 ```
 
-Then, `en` is set as our default locale.
+Then, we set `en` as our default locale.
 
 ```javascript
 Globalize.locale( "en" );
 ```
 
-And, we run some Globalize functions.
+Then, we can enjoy Globalize.
 
 ```javascript
 Globalize.formatDate( new Date(), { datetime: "medium" } );
 Globalize.formatNumber( 12345 );
 ```
 
-Remember, when you point your browser at `./script-tag/index.html`, don't forget
-to open your JavaScript console to see the demo output...
-
-
-## AMD
-
-We assume you know what AMD is. This demo is composed of the following file
-structure.
-
-```
-amd/
-├── index.html
-└── main.js
-```
-
-### Running the demo
-
-1) Fetch `cldr.js` by using the instructions from Script Tag demo above, or by
-using `bower install cldr.js`. If you use bower, you'll get:
-
-```
-amd/
-├── bower_components/
-│   └── cldr.js/ 
-│       └── dist/
-│           ├── cldr
-│           │   └── supplemental.js
-│           └── cldr.js
-├── index.html
-└── main.js
-```
-
-2) Fetch Unicode CLDR JSON by running the commands below. For more information, see root's [README](../../README.md#how-to-get-and-load-cldr-json-data).
-
-`wget http://www.unicode.org/Public/cldr/latest/json.zip && unzip json.zip -d cldr`
-
-You'll get:
-
-```
-amd/
-├── bower_components/
-│   └── cldr.js/ 
-│       └── dist/
-│           ├── cldr
-│           │   └── supplemental.js
-│           └── cldr.js
-├── cldr/
-│   ├── main/
-│   │   └── ...
-│   └── supplemental/
-│       └── ...
-├── index.html
-└── main.js
-```
-
-3) Point your browser to `./amd/index.html`.
-
-### Understanding the demo
-
+Remember, when you point your browser at `./index.html`, don't forget to open
+your JavaScript console to see the demo output...

@@ -46,7 +46,7 @@ Node.js module.
 
 <a name="alpha"></a>
 ### This is an alpha 1.x version
-We're working on the migration to using the Unicode CLDR. This is an alpha 1.x
+We're working on the migration to using the Unicode CLDR. This is an alpha
 version of Globalize. In other words, this is not a software for production
 environment (yet).
 
@@ -56,7 +56,7 @@ environment (yet).
 Patches to the previous 0.x codebase probably can't be used. If you have a
 problem, please create an issue first before trying to patch it.
 
-Are you looking for 0.x docs? Click [here](https://github.com/jquery/globalize/tree/79ae658b842f75f58199d6e9074e01f7ce207468).
+Are you looking for 0.x docs? Find them [here](https://github.com/jquery/globalize/tree/79ae658b842f75f58199d6e9074e01f7ce207468).
 
 
 <a name="about"></a>
@@ -105,6 +105,7 @@ information on its usage.
 | globalize/date.js | +9.2KB | [Date module](#date_module) provides date formatting and parsing |
 | globalize/number.js | +3.7KB | [Number module](#number_module) provides number formatting and parsing |
 | globalize/translate.js | +0.7KB | [Translate module](#translate_module) provides message translation |
+<!--- By updating this table, also update its clone in #globalize_usage -->
 
 <a name="browser_support"></a>
 ### Browser Support
@@ -119,142 +120,74 @@ please just [let us know](https://github.com/jquery/globalize/issues).
 <a name="hello_world"></a>
 ### Hello World
 
-If an example talks more to you than words, then check out our [hello world
-demo](doc/hello-world/).
+An example is worth a thousand words. Check out our [Hello
+World](doc/hello-world/) demo. Also, note that we have the same Hello World demo
+in two different flavors: [AMD + bower](doc/hello-world-amd-bower/), and
+[Node.js + npm](doc/hello-world-node-npm/).
 
 <a name="usage"></a>
 ### Usage
 
-All distributables are UMD wrapped. So, it supports AMD, CommonJS, or global
-variables (in case neither AMD nor CommonJS have been detected).
+1. Get and load Globalize's dependencies.
+1. Get and load the appropriate Unicode CLDR JSON content you are about to use.
+1. Get and load Globalize.
 
-Example of usage with script tags:
+<a name="dependencies"></a>
+#### Globalize's dependencies
 
-```html
-<script src="./external/cldr.js/dist/cldr.js"></script>
-<script src="./dist/globalize.js"></script>
-<script src="./dist/globalize/date.js"></script>
-```
+| Dependency | Summary |
+|---|---|
+| [cldr.js](https://github.com/rxaviers/cldr) | CLDR low level manipulation tool (analogous to what sizzle is for jQuery Core) |
 
-Example of usage on AMD:
-
-```bash
-bower install cldr.js globalize
-```
-```javascript
-require.config({
-  paths: {
-    cldr: "bower_components/cldr.js/dist/cldr.runtime",
-    globalize: "bower_components/globalize/dist/globalize"
-  }
-});
-require( [ "globalize", "globalize/date" ], function( Globalize ) {
-  ...
-});
-```
-
-Example of usage with Node.js:
-
-```bash
-npm install cldr.js globalize
-```
-```javascript
-var Globalize = require( "globalize" );
-...
-```
+The only Globalize dependency is `cldr.js` and you need to load it prior to
+using Globalize. [Learn more about how to get and use it by clicking
+here](doc/usage/dependencies.md).
 
 <a name="cldr_usage"></a>
-### How to get and load CLDR JSON data
+#### Unicode CLDR (the i18n content)
 
-The Unicode CLDR is available for download as JSON
-([`json.zip`](http://www.unicode.org/Public/cldr/latest/json.zip)). This file
-contains the complete data of what the Unicode CLDR Project considers the top
-20 languages (at the time of this writing).
+Globalize is the i18n software, and Unicode CLDR is the i18n content. It's
+analogous to Globalize being the engine, and Unicode CLDR being the fuel.
 
-You can generate the JSON representation of the languages not available in the
-ZIP file by using the official conversion tool
-([`tools.zip`](http://www.unicode.org/Public/cldr/latest/)). This ZIP contains a
-README with instructions on how to build the data.
+You need to feed Globalize on the appropriate portions of CLDR prior to using
+it.
 
-You can choose to generate unresolved data to save space or bandwidth (`-r false`
-option of the conversion tool), and instead have it resolve at runtime.
+*How do I figure out which CLDR portions are the appropriate ones?*
 
-For the examples below, first fetch CLDR JSON data:
+On the [API documentation](#api), each Globalize function specifies which CLDR
+portions they require.
 
-```bash
-wget http://www.unicode.org/Public/cldr/latest/json.zip
-unzip json.zip -d cldr
-```
+*How am I supposed to get and load CLDR content?*
 
-Example of embedding CLDR JSON data:
+Learn [how to get and load CLDR content](doc/usage/cldr.md).
 
-```html
-<script>
-Globalize.load({
-  main: {
-    en: {
-      ...
-    }
-  },
-  supplemental: {
-    likelySubtags: {
-      ...
-    },
-    timeDate: {
-      ...
-    },
-    weekData: {
-      ...
-    }
-  }
-});
-</script>
-```
+<a name="globalize_usage"></a>
+#### Globalize (the i18n software)
 
-Example of loading it dynamically:
+Globalize can be used for a variety of different I18n tasks (format or parse
+dates, format or parse numbers, format messages, etc). Therefore, you may
+NOT need Globalize in its entirety. For that reason, we made it modular, so you
+can pick the pieces you need.
 
-```html
-<script src="jquery.js"></script>
-<script>
-$.get( "cldr/main/en/ca-gregorian.json", Globalize.load );
-$.get( "cldr/supplemental/likelySubtags.json", Globalize.load );
-$.get( "cldr/supplemental/timeData.json", Globalize.load );
-$.get( "cldr/supplemental/weekData.json", Globalize.load );
-</script>
-```
+Globalize's consumable-files are located in the `./dist` directory. If you don't
+find it, it's because you are using a development branch. You should either use
+a [released branch](doc/usage/globalize.md) or [build the distrubution files
+yourself](#build). The files are:
 
-Example using AMD (also see our [functional tests](test/functional.js)):
-```javascript
-define([
-  "globalize",
-  "json!fixtures/cldr/main/en/ca-gregorian.json",
-  "json!fixtures/cldr/supplemental/likelySubtags.json",
-  "json!fixtures/cldr/supplemental/timeData.json",
-  "json!fixtures/cldr/supplemental/weekData.json",
-  "globalize/date"
-], function( Globalize, enCaGregorian, likelySubtags, timeData, weekData ) {
+| File | Minified size | Summary |
+|---|--:|---|
+| globalize.js | 0.4KB | [Core library](#core) |
+| globalize/date.js | +9.2KB | [Date module](#date_module) provides date formatting and parsing |
+| globalize/number.js | +3.7KB | [Number module](#number_module) provides number formatting and parsing |
+| globalize/translate.js | +0.7KB | [Translate module](#translate_module) provides message translation |
+<!--- By updating this table, also update its clone in #modules -->
 
-  Globalize.load( enCaGregorian );
-  Globalize.load( likelySubtags );
-  Globalize.load( timeData );
-  Globalize.load( weekData );
+Learn more on [how to get a Globalize release, load and use
+it](doc/usage/globalize.md).
 
-});
-```
-
-Example using Node.js:
-
-```javascript
-var Globalize = require( "globalize" );
-Globalize.load( require( "./cldr/main/en/ca-gregorian.json" ) );
-Globalize.load( require( "./cldr/supplemental/likelySubtags.json" ) );
-Globalize.load( require( "./cldr/supplemental/timeData.json" ) );
-Globalize.load( require( "./cldr/supplemental/weekData.json" ) );
-```
 
 <a name="api"></a>
 ## API
-
 
 <a name="core"></a>
 ### Core module
