@@ -44,8 +44,9 @@ distribution files yourself. See root's [README](../../README.md) for help.
 
 Before using Globalize, we always need to feed it on the I18n content (Unicode
 CLDR) we are about to use. In order to do so, we use `Globalize.load()` and pass
-the content. On this demo, we tried to make the things a little easier for you.
-So, we are using embedded static JSON, and no extra step is required.
+the content. On this demo, we tried to make things a little easier for you.
+So, we are using embedded static JSON, and we don't need to fetch this content
+elsewhere.
 
 ```javascript
 Globalize.load( ... );
@@ -64,4 +65,5 @@ Globalize.formatDate( new Date(), { datetime: "medium" } );
 Globalize.formatNumber( 12345 );
 ```
 
-Open your JavaScript console to see the output...
+Remember, when you point your browser at `./script-tag/index.html`, don't forget
+to open your JavaScript console to see the demo output...
