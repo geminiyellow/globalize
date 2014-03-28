@@ -104,25 +104,8 @@ more information on its usage.
 <a name="browser_support"></a>
 #### Browser Support
 
-We officially support:
- - Firefox (latest - 1)+
- - Chrome (latest - 1)+
- - Safari 5.1+
- - IE 8+
- - Opera (latest - 1)+
-
-Dry tests show Globalize also works on the following browsers:
-
-- Firefox 4+
-- Safari 5+
-- Chrome 14+
-- IE 6+
-- Opera 11.1+
-
-If you find any bugs, please just [let us
-know](https://github.com/jquery/globalize/issues). We'll be glad to fix them for
-the officially supported browsers, or at least to update the documentation for
-the unsupported ones.
+We officialy support http://jquery.com/browser-support/. If you find any bugs,
+please just [let us know](https://github.com/jquery/globalize/issues).
 
 <a name="usage"></a>
 ## Usage
