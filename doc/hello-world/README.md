@@ -27,21 +27,24 @@ script-tag/
 ```
 
 The next script tag loads `globalize.js`, which is already available on this
-repository.
+repository. If it's not, it means you're using a development branch (not a
+release branch). So, you need to either use a release branch or build the
+distribution files yourself. See root's [README](../../README.md) for help.
 
 ```html
 <script src="../../../dist/globalize.js"></script>
 ```
 
 To load the I18n content (Unicode CLDR) needed for this demo, we use
-`Globalize.load()` and pass an embedded static JSON.
+`Globalize.load()` and pass as first argument the content, which is an embedded
+static JSON in this case.
 
 
 ```javascript
 Globalize.load( ... );
 ```
 
-Then, we set the current locale to `en`.
+Then, we set our default locale to `en`.
 
 ```javascript
 Globalize.locale( "en" );
