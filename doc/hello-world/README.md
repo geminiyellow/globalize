@@ -50,5 +50,11 @@ Then, we set `en` as our default locale.
 Globalize.locale( "en" );
 ```
 
-We run some Globalize functions. Open your JavaScript console to see the
-output...
+We run some Globalize functions.
+
+```javascript
+Globalize.formatDate( new Date(), { datetime: "medium" } );
+Globalize.formatNumber( 12345 );
+```
+
+Open your JavaScript console to see the output...
