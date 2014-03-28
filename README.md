@@ -88,8 +88,8 @@ Globalize uses the [Unicode CLDR](http://cldr.unicode.org/), the largest and
 most extensive standard repository of locale data.
 
 We do NOT embed any i18n data within our library. However, we make it really
-easy to use. Read the section [How to get and load CLDR JSON data](#cldr_usage) for
-more information on its usage.
+easy to use. Read [How to get and load CLDR JSON data](#cldr_usage) for more
+information on its usage.
 
 <a name="modules"></a>
 #### Pick the modules you need
@@ -106,6 +106,13 @@ more information on its usage.
 
 We officialy support http://jquery.com/browser-support/. If you find any bugs,
 please just [let us know](https://github.com/jquery/globalize/issues).
+
+<a name="hello_world"></a>
+### Hello World
+
+If you are a "skip the readings and jump into the demo" kinda person, check out
+our [hello world demo](doc/hello-world/).
+
 
 <a name="usage"></a>
 ## Usage
