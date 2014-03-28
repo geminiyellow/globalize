@@ -216,7 +216,7 @@ Example of loading it dynamically:
 ```html
 <script src="jquery.js"></script>
 <script>
-$.get( "cldr/en/ca-gregorian.json", Globalize.load );
+$.get( "cldr/main/en/ca-gregorian.json", Globalize.load );
 $.get( "cldr/supplemental/likelySubtags.json", Globalize.load );
 $.get( "cldr/supplemental/timeData.json", Globalize.load );
 $.get( "cldr/supplemental/weekData.json", Globalize.load );
@@ -246,10 +246,10 @@ Example using Node.js:
 
 ```javascript
 var Globalize = require( "globalize" );
+Globalize.load( require( "./cldr/main/en/ca-gregorian.json" ) );
 Globalize.load( require( "./cldr/supplemental/likelySubtags.json" ) );
 Globalize.load( require( "./cldr/supplemental/timeData.json" ) );
 Globalize.load( require( "./cldr/supplemental/weekData.json" ) );
-Globalize.load( require( "./cldr/en/ca-gregorian.json" ) );
 ```
 
 <a name="api"></a>
