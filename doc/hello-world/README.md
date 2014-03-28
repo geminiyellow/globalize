@@ -1,5 +1,6 @@
 # Hello World
 
+
 ## Script tag
 
 This is the simplest demo and it's composed of one single file:
@@ -19,7 +20,7 @@ script-tag/
 └── index.html
 ```
 
-1. Point your browser to `./script-tag/index.html`.
+2. Point your browser to `./script-tag/index.html`.
 
 ### Understanding the demo
 
@@ -67,3 +68,56 @@ Globalize.formatNumber( 12345 );
 
 Remember, when you point your browser at `./script-tag/index.html`, don't forget
 to open your JavaScript console to see the demo output...
+
+
+## AMD
+
+This demo assumes you know what AMD is. It's composed of one single file:
+
+```
+amd/
+├── index.html
+└── main.js
+```
+
+### Running the demo
+
+1. Fetch `cldr.js` by using the instructions from Script Tag demo, or by using
+`bower install cldr.js`. If you used bower, you'll get:
+
+```
+amd/
+├── bower_components/
+│   └── cldr.js/ 
+│       └── dist/
+│           ├── cldr
+│           │   └── supplemental.js
+│           └── cldr.js
+├── index.html
+└── main.js
+```
+
+2. Fetch Unicode CLDR JSON by running `wget http://www.unicode.org/Public/cldr/latest/json.zip && unzip json.zip -d cldr`.
+For more information, see root's [README](../../README.md#how-to-get-and-load-cldr-json-data). You'll get:
+
+```
+amd/
+├── bower_components/
+│   └── cldr.js/ 
+│       └── dist/
+│           ├── cldr
+│           │   └── supplemental.js
+│           └── cldr.js
+├── cldr/
+│   ├── main/
+│   │   └── ...
+│   └── supplemental/
+│       └── ...
+├── index.html
+└── main.js
+```
+
+3. Point your browser to `./amd/index.html`.
+
+### Understanding the demo
+
