@@ -12,35 +12,40 @@ script-tag/
 
 ### Running the demo
 
-1. Download `cldr.js`. See https://github.com/rxaviers/cldr for instructions. Then, copy the file into `script-tag/`, so you'll get:
+1) Download `cldr.js`. See https://github.com/rxaviers/cldr for instructions.
+Then, copy its `dist/` files into `script-tag/`, so you'll get:
 
 ```
 script-tag/
+├── cldr
+│   └── supplemental.js
 ├── cldr.js
 └── index.html
 ```
 
-2. Point your browser to `./script-tag/index.html`.
+2) Point your browser to `./script-tag/index.html`.
 
 ### Understanding the demo
 
-The first piece that matters is the script tag that loads `cldr.js`. It's the
-only dependency of Globalize.
+First, the Globalize dependency `cldr.js` and its supplemental module are loaded.
 
 ```html
 <script src="cldr.js"></script>
+<script src="cldr/supplemental.js"></script>
 ```
 
-You need to manually download `cldr.js` yourself as an exercise of this demo as
-told above.
+Note you need to manually download `cldr.js` yourself as an exercise of this
+demo as told above.
 
-The next script tag loads `globalize.js`, which is already available on this
-repository. If it's not, it means you're using a development branch (not a
+Next, Globalize and its modules are loaded. Note they are already available on
+this repository. If it's not, it means you're using a development branch (not a
 release branch). So, you need to either use a release branch or build the
 distribution files yourself. See root's [README](../../README.md) for help.
 
 ```html
 <script src="../../../dist/globalize.js"></script>
+<script src="../../../dist/globalize/date.js"></script>
+<script src="../../../dist/globalize/number.js"></script>
 ```
 
 Before using Globalize, we always need to feed it on the I18n content (Unicode
@@ -53,7 +58,7 @@ elsewhere.
 Globalize.load( ... );
 ```
 
-Then, we set `en` as our default locale.
+Then, `en` is set as our default locale.
 
 ```javascript
 Globalize.locale( "en" );
@@ -72,7 +77,8 @@ to open your JavaScript console to see the demo output...
 
 ## AMD
 
-This demo assumes you know what AMD is. It's composed of one single file:
+We assume you know what AMD is. This demo is composed of the following file
+structure.
 
 ```
 amd/
@@ -82,8 +88,8 @@ amd/
 
 ### Running the demo
 
-1. Fetch `cldr.js` by using the instructions from Script Tag demo, or by using
-`bower install cldr.js`. If you used bower, you'll get:
+1) Fetch `cldr.js` by using the instructions from Script Tag demo above, or by
+using `bower install cldr.js`. If you use bower, you'll get:
 
 ```
 amd/
@@ -97,8 +103,11 @@ amd/
 └── main.js
 ```
 
-2. Fetch Unicode CLDR JSON by running `wget http://www.unicode.org/Public/cldr/latest/json.zip && unzip json.zip -d cldr`.
-For more information, see root's [README](../../README.md#how-to-get-and-load-cldr-json-data). You'll get:
+2) Fetch Unicode CLDR JSON by running the commands below. For more information, see root's [README](../../README.md#how-to-get-and-load-cldr-json-data).
+
+`wget http://www.unicode.org/Public/cldr/latest/json.zip && unzip json.zip -d cldr`
+
+You'll get:
 
 ```
 amd/
@@ -117,7 +126,7 @@ amd/
 └── main.js
 ```
 
-3. Point your browser to `./amd/index.html`.
+3) Point your browser to `./amd/index.html`.
 
 ### Understanding the demo
 
