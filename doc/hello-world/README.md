@@ -35,19 +35,20 @@ distribution files yourself. See root's [README](../../README.md) for help.
 <script src="../../../dist/globalize.js"></script>
 ```
 
-To load the I18n content (Unicode CLDR) needed for this demo, we use
-`Globalize.load()` and pass as first argument the content, which is an embedded
-static JSON in this case.
-
+Before using Globalize, we need to feed in I18n content (Unicode CLDR). In
+order to do so, we use `Globalize.load()` and pass the content as the first
+argument. In this demo, we use embedded static JSON. So, no extra step is
+required.
 
 ```javascript
 Globalize.load( ... );
 ```
 
-Then, we set our default locale to `en`.
+Then, we set `en` as our default locale.
 
 ```javascript
 Globalize.locale( "en" );
 ```
 
-And, run some Globalize functions... Open your JavaScript console to see the output.
+We run some Globalize functions. Open your JavaScript console to see the
+output...
