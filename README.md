@@ -7,17 +7,8 @@ A JavaScript library for internationalization and localization that leverage the
 official [Unicode CLDR](http://cldr.unicode.org/) JSON data. The library works both for the browser and as a
 Node.js module.
 
-----
-
-## Heads up!
-
-We're working on the migration to using the Unicode CLDR. This is an alpha version of Globalize: 1.0.0-pre.
-
-Patches to the previous stable codebase probably can't be used. If you have a
-problem, please create an issue first before trying to patch it.
-
-----
-
+- [Heads up!](#heads_up)
+  - [This is an alpha version](#alpha)
 - [Getting started](#getting_started)
   - [Why globalization?](#why)
   - [About Globalize](#about)
@@ -31,10 +22,10 @@ problem, please create an issue first before trying to patch it.
   - [Core](#core)
     - [Globalize.load](#load)
     - [Globalize.locale](#locale)
-  - [Number module](#number)
+  - [Number module](#number_module)
     - [Globalize.formatNumber](#format_number)
     - [Globalize.parseNumber](#parse_number)
-  - [Date module](#date)
+  - [Date module](#date_module)
     - [Globalize.formatDate](#format_date)
     - [Globalize.parseDate](#parse_date)
   - [Translate module](#translate_module)
@@ -46,6 +37,17 @@ problem, please create an issue first before trying to patch it.
   - [Source files](#source_files)
   - [Build](#build)
   - [Tests](#tests)
+
+
+<a name="heads_up"></a>
+## Heads up!
+
+<a name="alpha"></a>
+### This is an alpha version
+We're working on the migration to using the Unicode CLDR. This is an alpha 1.x version of Globalize.
+
+Patches to the previous 0.x codebase probably can't be used. If you have a
+problem, please create an issue first before trying to patch it.
 
 
 <a name="getting_started"></a>
@@ -90,23 +92,16 @@ easy to use. Read the section [How to get and load CLDR JSON data](#cldr_usage) 
 more information on its usage.
 
 <a name="modules"></a>
-#### Load and use only what you need
+#### Use the module you need
 
-Globalize is split in modules: core, number (coming soon), date, and translate.
-We're evaluating other modules, eg. plural, ordinals, etc.
+| File | Minified size | Summary |
+|---|--:|---|
+| globalize.js | 0.4KB | [Core library](#core) |
+| globalize/date.js | +9.2KB | [Date module](#date_module) provides date formatting and parsing |
+| globalize/number.js | +3.7KB | [Number module](#number_module) Provides number formatting and parsing |
+| globalize/translate.js | +0.7KB | [Translate module](#translate_module) Provides message translation |
 
-The core implements [`Globalize.load( cldrData )`](#load), and
-[`Globalize.locale( locale )`](#locale).
-
-The date module extends core Globalize, and adds [`Globalize.formatDate( value,
-pattern, locale )`](#format_date), and [`Globalize.parseDate( value, patterns, locale
-)`](#parse_date).
-
-The translate module extends core Globalize, and adds
-[`Globalize.loadTranslations( locale, json )`](#load_translations), and
-[`Globalize.translate( path , locale )`](#translate).
-
-More to come...
+More modules to come...
 
 <a name="browser_support"></a>
 #### Browser Support
@@ -314,7 +309,7 @@ console.log( Globalize.locale().attributes );
 LanguageMatching TBD (CLDR's spec http://www.unicode.org/reports/tr35/#LanguageMatching).
 
 
-<a name="number"></a>
+<a name="number_module"></a>
 ### Number module
 
 <a name="format_number"></a>
@@ -399,7 +394,7 @@ Globalize.formatNumber( 3.141592, { maximumFractionDigits: 2, round: "ceil" } );
 TBD
 
 
-<a name="date"></a>
+<a name="date_module"></a>
 ### Date module
 
 <a name="format_date"></a>
