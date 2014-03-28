@@ -8,7 +8,8 @@ official [Unicode CLDR](http://cldr.unicode.org/) JSON data. The library works b
 Node.js module.
 
 - [Heads up!](#heads_up)
-  - [This is an alpha version](#alpha)
+  - [This is an alpha 1.x version](#alpha)
+  - [Not accepting 0.x fixes anymore](#0.x-fixes)
 - [About Globalize](#about)
   - [Why globalization?](#why)
   - [Where to use it?](#where)
@@ -44,11 +45,18 @@ Node.js module.
 ## Heads up!
 
 <a name="alpha"></a>
-### This is an alpha version
-We're working on the migration to using the Unicode CLDR. This is an alpha 1.x version of Globalize.
+### This is an alpha 1.x version
+We're working on the migration to using the Unicode CLDR. This is an alpha 1.x
+version of Globalize. In other words, this is not a software for production
+environment (yet).
+
+<a name="0.x-fixes"></a>
+### Not accepting 0.x fixes anymore
 
 Patches to the previous 0.x codebase probably can't be used. If you have a
 problem, please create an issue first before trying to patch it.
+
+Are you looking for 0.x docs? This may help: https://github.com/jquery/globalize/tree/79ae658b842f75f58199d6e9074e01f7ce207468.
 
 
 <a name="about"></a>
