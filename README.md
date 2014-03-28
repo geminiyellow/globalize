@@ -9,15 +9,15 @@ Node.js module.
 
 - [Heads up!](#heads_up)
   - [This is an alpha version](#alpha)
+- [About Globalize](#about)
+  - [Why globalization?](#why)
+  - [Where to use it?](#where)
+  - [Where does the data come from?](#cldr)
+  - [Only load and use what you need](#modules)
+  - [Browser support](#where)
 - [Getting started](#getting_started)
   - [Hello World](#hello_world)
-  - [Why globalization?](#why)
-  - [About Globalize](#about)
-    - [Where to use it?](#where)
-    - [Where does the data come from?](#cldr)
-    - [Only load and use what you need](#modules)
-    - [Browser support](#where)
-- [Usage](#usage)
+  - [Usage](#usage)
   - [How to get and load CLDR JSON data](#cldr_usage)
 - [API](#api)
   - [Core](#core)
@@ -51,14 +51,8 @@ Patches to the previous 0.x codebase probably can't be used. If you have a
 problem, please create an issue first before trying to patch it.
 
 
-<a name="getting_started"></a>
-## Getting Started
-
-<a name="hello_world"></a>
-### Hello World
-
-If you are a "skip the readings and jump into the demo" kinda person, check out
-our [hello world demo](doc/hello-world/).
+<a name="about"></a>
+## About Globalize
 
 <a name="why"></a>
 ### Why globalization?
@@ -78,18 +72,14 @@ providing an API to convert user-entered number and date strings - in their
 own format - into actual numbers and dates, and conversely, to format numbers
 and dates into that string format.
 
-
-<a name="about"></a>
-### About Globalize
-
 <a name="where"></a>
-#### Where to use it?
+### Where to use it?
 
 It's designed to work both in the [browser](#browser_support), or in
 [Node.js](#usage). It supports both [AMD](#usage) and [CommonJS](#usage).
 
 <a name="cldr"></a>
-#### Where does the data come from?
+### Where does the data come from?
 
 Globalize uses the [Unicode CLDR](http://cldr.unicode.org/), the largest and
 most extensive standard repository of locale data.
@@ -99,7 +89,7 @@ easy to use. Read [How to get and load CLDR JSON data](#cldr_usage) for more
 information on its usage.
 
 <a name="modules"></a>
-#### Pick the modules you need
+### Pick the modules you need
 
 | File | Minified size | Summary |
 |---|--:|---|
@@ -109,14 +99,23 @@ information on its usage.
 | globalize/translate.js | +0.7KB | [Translate module](#translate_module) provides message translation |
 
 <a name="browser_support"></a>
-#### Browser Support
+### Browser Support
 
 We officialy support http://jquery.com/browser-support/. If you find any bugs,
 please just [let us know](https://github.com/jquery/globalize/issues).
 
 
+<a name="getting_started"></a>
+## Getting Started
+
+<a name="hello_world"></a>
+### Hello World
+
+If you are a *skip the readings and jump into the demo* kinda person, check out
+our [hello world demo](doc/hello-world/).
+
 <a name="usage"></a>
-## Usage
+### Usage
 
 All distributables are UMD wrapped. So, it supports AMD, CommonJS, or global
 variables (in case neither AMD nor CommonJS have been detected).

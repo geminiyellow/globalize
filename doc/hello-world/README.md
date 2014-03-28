@@ -1,1 +1,1 @@
-# Globalize - Hello World
+# Hello World
